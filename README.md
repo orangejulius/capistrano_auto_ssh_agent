@@ -1,12 +1,15 @@
 # CapistranoAutoSshAgent
 
-TODO: Write a gem description
+Tired of getting permission denied errors when deploying your private repo app because you forgot to run ssh-agent?
+This gem runs it for you (if it isn't already running) so you never have to think about it again
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano_auto_ssh_agent'
+    gem 'capistrano_auto_ssh_agent', require: false
+
+You probably want to put it in the development group
 
 And then execute:
 
@@ -18,7 +21,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In config/deploy.rb:
+
+    require 'capistrano_auto_ssh_agent'
+
+That's it! You should see the task 'deploy:setup\_ssh\_agent' run early in your deploy process.
+
 
 ## Contributing
 
